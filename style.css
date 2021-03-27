@@ -1,0 +1,17 @@
+.container {
+    background: rgba(25, 162, 174, 0.9);
+    display: grid;
+    grid-template-columns: minmax(5rem, 1fr) minmax(30rem, 45rem) minmax(5rem, 1fr);
+    grid-template-areas: 
+        "left card rigth"
+    ;
+}
+.card {
+    grid-area: card;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-areas: 
+        "header header header"
+        "picture picture picture"
+    ;
+}
