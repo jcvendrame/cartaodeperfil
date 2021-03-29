@@ -1,17 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100%;
+    height: 100%;
+}
 .container {
     background: rgba(25, 162, 174, 0.9);
     display: grid;
     grid-template-columns: minmax(5rem, 1fr) minmax(30rem, 45rem) minmax(5rem, 1fr);
+    grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas: 
+        "top top top"
         "left card rigth"
+        "botton botton botton"
     ;
 }
 .card {
+    width: 70%;
     grid-area: card;
     display: grid;
     grid-template-columns: 30% 30% 30%;
+    grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas: 
         "header header header"
-        "picture picture picture"
+        "left picture right"
+        "footer footer footer"
     ;
+    border: 1px solid black;
+    justify-content: center;
+    
+}
+.header {
+    grid-area: header;
+}
+.picture {
+    grid-area: picture;
+    
+    border: 1px solid blue;
+}
+.picture img {
+   
+    justify-content: center;
+}
+.footer {
+    grid-area: footer;
+    border: 1px solid red;
+    margin: auto;
+}
+.info {
+    display: inline-block;
+    margin: 10px 40px;
 }
