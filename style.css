@@ -4,53 +4,60 @@
     box-sizing: border-box;
 }
 body {
-    width: 100%;
-    height: 100%;
+    background: rgba(25, 162, 174, 0.9);
+    font-family: Arial, Helvetica, sans-serif;
 }
 .container {
-    background: rgba(25, 162, 174, 0.9);
-    display: grid;
-    grid-template-columns: minmax(5rem, 1fr) minmax(30rem, 45rem) minmax(5rem, 1fr);
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas: 
-        "top top top"
-        "left card rigth"
-        "botton botton botton"
-    ;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
 }
 .card {
-    width: 70%;
-    grid-area: card;
-    display: grid;
-    grid-template-columns: 30% 30% 30%;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas: 
-        "header header header"
-        "left picture right"
-        "footer footer footer"
-    ;
-    border: 1px solid black;
-    justify-content: center;
-    
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    width: 25%;
+    border-radius: 20px;
 }
-.header {
-    grid-area: header;
+.card-header {
+    background-image: url('./images/bg-pattern-card.svg');
+    height: 120px;
+    border-radius: 20px 20px 0 0;
 }
-.picture {
-    grid-area: picture;
-    
-    border: 1px solid blue;
+.card-content {
+    height: 120px;
+    text-align: center;
+    margin-top: -14%;
 }
-.picture img {
+.card-content img {
+    border-radius: 70px;
+    border: 2px solid white;
+    width: 30%;
+    margin-bottom: 2%;
+}
+.card-content h2 {
+    margin-bottom: 2%;
+}
+.card-content p {
+}
+.card-footer {
+    text-align: center;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 0 0 20px 20px;
+    margin-top: 20%;
    
-    justify-content: center;
+    border-top: 1px solid rgb(202, 189, 189);
 }
-.footer {
-    grid-area: footer;
-    border: 1px solid red;
-    margin: auto;
-}
-.info {
-    display: inline-block;
-    margin: 10px 40px;
+@media screen and (max-width: 380px) {
+    .container {
+        display: flex;
+    }
+    .card {
+        width: 80%;
+        margin: auto;
+    }
 }
